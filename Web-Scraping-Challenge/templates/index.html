@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mars Scrape</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
 </head>
 
 <body>
@@ -15,13 +16,36 @@
       <h1>Mission to Mars</h1>
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
     </div>
-   <h3>Headline data: {{ mars.title }}</h3>
-   <h6>Headline text: {{ mars.headline_text }}</h6>
-   <p>
-     <h3>Featured Mars Image</h3>
-     <!-- <img src= "{{ mars.feature_img }}" alt="Mars"> -->
-     <h2>{{ mars.feature_img }}</h2>
-   </p>
+    <h3>Headline data: {{ mars.title }}</h3>
+    <h6>Headline text: {{ mars.headline_text }}</h6>
+    <p>
+      <h3>Featured Mars Image</h3>
+      <div class="row">
+        <div class="col-md-8">
+          <img class = "img-responsive" src="{{ mars.feature_img }}" alt="Mars">
+        </div>
+        <div class="col-md-4">
+            <div class="card" style="width: 30rem;">
+                <div class="card-body">
+                  <h4 class="card-title">Current Weather On Mars</h4>
+                  <p class="card-text">{{ mars.weather }}</p>
+                </div>
+              </div>
+            <h4>Mars Facts</h4>
+            <table class="table">
+              <tr>
+              <th scope="col">Description</th>
+              <th scope="col">Value</th>
+              </tr>
+              <tbody>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>Mark</td>
+                  </tr>
+            </table>
+        </div>
+      </div>
+    </p>
 
   </div>
   </div>
