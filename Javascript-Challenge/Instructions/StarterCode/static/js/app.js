@@ -3,6 +3,7 @@ var tableData = data;
 
 var button = d3.select("#filter-btn");
 
+// execute filter based on input
 button.on("click", function() {
     var inputElement = d3.select("#datetime");
     var inputValue = inputElement.property("value");
@@ -12,7 +13,7 @@ button.on("click", function() {
     var filteredData = tableData.filter(sighting => sighting.datetime === inputValue);
 
     console.log(filteredData);
-
+// display requested data in table
     d3.select(".table-striped").selectAll("tbody")
         .selectAll("tr")
         .data(filteredData)
@@ -25,10 +26,3 @@ button.on("click", function() {
 });
 
 
-// d3.select(".table-striped").selectAll("tbody").selectAll("tr")
-//   .data(austinWeather)
-//   .enter()
-//   .append("tr")
-//   .html(function(d) {
-//     return `<td>${d.date}</td><td>${d.low}</td><td>${d.high}</td>`;
-//   })
